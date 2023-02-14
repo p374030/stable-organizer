@@ -1,0 +1,7 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t','us-docker.pkg.dev/stallapppoc/us.gcr.io/stallapp', '.']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['tag','us-docker.pkg.dev/stallapppoc/us.gcr.io/stallapp','us.gcr.io/stallapppoc/stallapp:1.0']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'us.gcr.io/stallapppoc/stallapp:1.0']
