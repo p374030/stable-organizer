@@ -1,0 +1,33 @@
+table {
+    width: 100%;
+}
+
+th.mat-sort-header-sorted {
+    color: black;
+}
+
+.bookfacilityServiceButton{
+    margin-left: 50px;
+    margin-top: 1px;
+    margin-bottom: 10px;
+    background-color: rgb(201, 237, 199);
+    color: rgb(97, 95, 95);
+    
+}
+
+.center {
+    text-align: center;
+    margin-top: 5px;
+  }
+
+
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+  .booking{
+  }

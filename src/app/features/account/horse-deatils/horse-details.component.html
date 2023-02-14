@@ -1,0 +1,154 @@
+<div class="horse-card">
+  <li class="horse-list" *ngFor="let horse of horses">
+    <mat-card *ngIf="changeModeOff && !addNewHorseCardShown" class="showCard" class="horse-card">
+      <mat-card-header >
+        <div mat-card-avatar class="example-header-image" [ngStyle]="{'background-image': 'url('+horse.image+')'}"></div>
+        <mat-card-title>
+         {{horse.name}}
+        </mat-card-title>
+        <mat-card-subtitle>
+         {{horse.breed}}
+          </mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>
+          Stall: {{horse.stable}}
+        </p>
+        <p>
+          Geboren: {{horse.age}}
+        </p>
+      </mat-card-content>
+      <mat-card-content>
+        <p>
+          <li class="horse-list" *ngFor="let horseShare of horseSharingList" >
+           Reitbeteiligung: {{horseShare.firstName}} {{horseShare.lastName}}
+          </li>
+          
+        </p>
+        <p>
+         Tierarzt: {{horse.vet.name}}
+        </p>
+        Nummer: {{horse.vet.phoneNumber}}
+      </mat-card-content>
+      <mat-card-actions>
+        <button class="changeHorrseButton" mat-raised-button aria-label="HorseaddButton" (click)="editHorse(horse.id)">
+          <mat-icon class="edit">edit</mat-icon>
+        </button>
+        <button class="changeHorrseButton" mat-raised-button aria-label="HorseaddButton" (click)="deleteHorse(horse)">
+          <mat-icon class="edit">delete</mat-icon>
+        </button>
+        <button *ngIf="enabled" class="saveChangedHorrseButton" mat-raised-button aria-label="HorseaddButton" (click)="saveEditedHorse(horse.id)">
+          <mat-icon class="edit">save</mat-icon>
+        </button>
+        
+      </mat-card-actions>
+      
+    </mat-card>
+
+  </li>
+
+
+
+  <mat-card class="changeCard" *ngIf="!changeModeOff" class="horse-card">
+    <mat-card-header class="changeCard">
+      <div mat-card-avatar class="example-header-image" [ngStyle]="{'background-image': 'url('+changeHorse.image+')'}"></div>
+      <mat-card-title>
+        <input  placeholder="{{changeHorse.name}}" [formControl] ="newHorseNameInput" matInput>
+      </mat-card-title>
+      <mat-card-subtitle>
+        <input  placeholder="{{changeHorse.breed}}" [formControl] ="newHorseBreedInput" matInput>
+        </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        <input  placeholder="Stall: {{changeHorse.stable}}" [formControl] ="newHorseStableInput" matInput>
+      </p>
+      <p>
+        <input  placeholder="Geboren: {{changeHorse.age}}" [formControl] ="newHorseBirthdayInput" matInput>
+      </p>
+    </mat-card-content>
+    <mat-card-content>
+      <p>
+        <li class="horse-list" *ngFor="let horseShare of horseSharingList">
+          <input  placeholder="Reitbeteiligung: {{horseShare.firstName}} {{horseShare.lastName}}" [formControl] ="newHorseShareInput" matInput>
+        </li>
+        
+      </p>
+      <p *ngIf="horseSharingStringList.length <=1 && horseSharingStringList[0] ==''">
+        <input  placeholder="Reitbeteiligung:" [formControl] ="newHorseShareInput" matInput>
+      </p>
+      <p>
+        <div> <input  placeholder="Tierarzt: {{changeHorse.vet.name}}" [formControl] ="newHorseVetInput" matInput></div>
+        <div>
+          <input  placeholder="Nummer: {{changeHorse.vet.phoneNumber}}" [formControl] ="newHorseVetPhoneInput" matInput>
+        </div>
+      
+    </mat-card-content>
+    <mat-card-actions>
+      <button *ngIf="enabled 
+      && newHorseNameInput.value 
+      || newHorseStableInput.value
+      || newHorseBirthdayInput.value
+      || newHorseBreedInput.value
+      || newHorseShareInput.value
+      || newHorseVetInput.value
+      || newHorseVetPhoneInput.value
+      " class="saveChangedHorrseButton" mat-raised-button aria-label="HorseaddButton" (click)="saveEditedHorse(changeHorse.id)">
+        <mat-icon class="edit">save</mat-icon>
+      </button>
+      
+    </mat-card-actions>
+    
+  </mat-card>
+
+
+
+  
+  <button *ngIf="!addNewHorseCardShown && changeModeOff" class="addHorrseButton" mat-raised-button aria-label="HorseaddButton" (click)="showAddNewHorseCard()">
+    <mat-icon class="box-tab-icon">add_circle_outline</mat-icon>
+    Pferd anlegen
+  </button>
+
+  <mat-card class="horse-card" *ngIf="addNewHorseCardShown ">
+    <mat-card-header >
+      <mat-card-title>
+        
+        <input  placeholder="Name" [formControl] ="newHorseNameInput" matInput>
+      </mat-card-title>
+      <mat-card-subtitle>
+        <input  placeholder="Rasse" [formControl] ="newHorseBreedInput" matInput>
+        </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        <input  placeholder="Stall" [formControl] ="newHorseStableInput" matInput>
+      </p>
+      <p>
+        <input  placeholder="Geboren" [formControl] ="newHorseBirthdayInput" matInput>
+      </p>
+    </mat-card-content>
+    <mat-card-content>
+    
+      <p>
+        <div> <input  placeholder="Tierarzt" [formControl] ="newHorseVetInput" matInput></div>
+        <div>
+          <input  placeholder="Nummer" [formControl] ="newHorseVetPhoneInput" matInput>
+        </div>
+      
+    </mat-card-content>
+    <mat-card-actions>
+      <button *ngIf="enabled 
+      && newHorseNameInput.value 
+      && newHorseStableInput.value
+      && newHorseBirthdayInput.value
+      && newHorseBreedInput.value
+      || newHorseVetInput.value
+      || newHorseVetPhoneInput.value
+      " class="saveChangedHorrseButton" mat-raised-button aria-label="HorseaddButton" (click)="addHorse()">
+        <mat-icon class="edit">save</mat-icon>
+      </button>
+      
+    </mat-card-actions>
+  </mat-card>
+  
+</div>

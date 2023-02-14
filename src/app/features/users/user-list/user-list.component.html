@@ -1,0 +1,24 @@
+<div class="container" fxLayout="row" fxLayoutAlign="center none">
+  <div fxFlex="95%">
+
+    <mat-card>
+      <mat-card-content>
+        <h2>Einsteller</h2>
+
+
+        <div class="container" fxLayout="row" fxLayoutAlign="center none">
+          <div fxFlex="50%" class="text-center no-records animate">
+            <mat-icon>people_outline</mat-icon>
+            <li  class="stableService-list" *ngFor="let costumer of costumerList" >
+              {{costumer.firstName}} {{costumer.lastName}} 
+            </li>
+            
+          </div>
+          <mat-icon> </mat-icon>
+        </div>
+
+      </mat-card-content>
+    </mat-card>
+
+  </div>
+</div>

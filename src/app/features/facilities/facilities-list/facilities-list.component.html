@@ -1,0 +1,24 @@
+<div class="container" fxLayout="column" fxLayoutAlign="space-evenly none">
+  <div fxFlex="95%">
+    <li *ngFor="let facility of facilityList" class="facility-list">
+      <mat-card class="facility" *ngIf="facility.display" >
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{facility.name}}</mat-card-title>
+        </mat-card-header>
+        <img class="facility" mat-card-image src={{facility.image}} alt="longierhalle" (click)=" openFacility(facility)">
+        <mat-card-actions>
+          <button class="bookfacilityServiceButton" mat-button (click)="openFacility(facility)">
+            <mat-icon>library_add</mat-icon>
+            Buchen </button>
+        </mat-card-actions>
+      </mat-card>
+      <div>
+        <app-facility *ngIf="!facility.display"></app-facility>
+      </div>
+    </li>  
+    
+   
+    
+  </div>
+</div>

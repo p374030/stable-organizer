@@ -1,0 +1,22 @@
+<div class="container" fxLayout="column" fxLayoutAlign="center none" *ngIf="listIsLoaded">
+  <div fxFlex="95%">
+    <li  class="stableService-list" *ngFor="let stableService of stableServiceList" >
+      <mat-card class="stableService-matCard" *ngIf="!stableService.display" >
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{stableService.name}}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src={{stableService.image}} alt="longierhalle" (click)="showStableService(stableService)">
+        <mat-card-actions>
+          <button class="bookStableServiceButton" (click)="showStableService(stableService)" mat-button >
+            <mat-icon>library_add</mat-icon>
+            Buchen
+          </button>
+        </mat-card-actions>
+      </mat-card>
+      <app-stableSerive  *ngIf="stableService.display"></app-stableSerive>
+    </li>  
+  </div>
+
+  
+</div>

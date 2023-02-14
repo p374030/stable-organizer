@@ -1,0 +1,33 @@
+.horse-card {
+    max-width: 400px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
+  .new-horse-card-header{
+    max-width: 4px;
+  }
+  
+  .example-header-image {
+    background-size: cover;
+  }
+  .horse-list{
+    list-style-type: none;
+  }
+
+.addHorrseButton{
+  margin-left: 8px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: rgb(201, 237, 199);
+  color: rgb(97, 95, 95);
+}
+
+.changeHorrseButton{
+  margin-left: 8px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: rgb(201, 237, 199);
+  color: rgb(97, 95, 95);
+
+}

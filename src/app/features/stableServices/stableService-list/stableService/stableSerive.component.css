@@ -1,0 +1,41 @@
+.stableService-list {
+    list-style-type: none;
+}
+
+.example-small-box, .example-large-box {
+    display: flex;
+    align-items: top;
+    justify-content: top;
+    margin: 16px;
+    padding: 16px;
+    border-radius: 8px;
+  }
+  
+  .example-small-box {
+    max-height: 300px;
+    max-width: 300px;
+  }
+  
+  .example-large-box {
+    height: 300px;
+    width: 300px;
+  }
+
+  .bookStableServiceButton{
+    margin-left: 8px;
+    margin-top: 1px;
+    margin-bottom: 10px;
+    background-color: rgb(201, 237, 199);
+    color: rgb(97, 95, 95);
+  
+  }
+
+  .deleteServiceButton{
+    margin-left: 50px;
+    margin-top: 1px;
+    margin-bottom: 10px;
+    background-color: rgb(201, 237, 199);
+    color: rgb(97, 95, 95);
+    
+}
+

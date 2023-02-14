@@ -1,0 +1,21 @@
+import { NgxLoggerLevel } from 'ngx-logger';
+
+// The file contents for the current environment will overwrite these during build.
+// The build system defaults to the dev environment which uses `environment.ts`, but if you do
+// `ng build --env=prod` then `environment.prod.ts` will be used instead.
+// The list of which env maps to which file can be found in `.angular-cli.json`.
+
+export const environment = {
+  production: false,
+  logLevel: NgxLoggerLevel.TRACE,
+  serverLogLevel: NgxLoggerLevel.OFF,
+  firebase: {
+    apiKey: "AIzaSyAWV66zUCN-FQkJIST1nJJqUbS26wdwLf4",
+    authDomain: "stallapppoc.firebaseapp.com",
+    databaseURL: "https://stallapppoc-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "stallapppoc",
+  storageBucket: "stallapppoc.appspot.com",
+  messagingSenderId: "629452467564",
+  appId: "1:629452467564:web:731dc4757e00a0f1ae5749"
+  }
+};

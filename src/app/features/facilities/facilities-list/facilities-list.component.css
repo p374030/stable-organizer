@@ -1,0 +1,25 @@
+table {
+    width: 100%;
+
+}
+
+th.mat-sort-header-sorted {
+    color: black;
+}
+
+.facility-list {
+    list-style-type: none;
+    display: inline-flex;
+}
+
+.bookfacilityServiceButton{
+    margin-left: 8px;
+    margin-top: 1px;
+    margin-bottom: 10px;
+    background-color: rgb(201, 237, 199);
+    color: rgb(97, 95, 95);
+}
+
+.facility{
+    
+}
